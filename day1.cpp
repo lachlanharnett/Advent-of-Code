@@ -2,33 +2,15 @@
 #include <cstdio>
 #include <iostream>
 #include <string>
-#include <cwchar>
-#include <iterator>
 #include <vector>
-#include <map>
 #include <algorithm>
 
-//int is_empty(const std::string& s) {
-//    while (*s != '\0') {
-//        if (!isspace((unsigned char)*s))
-//            return 0;
-//        s++;
-//    }
-//    return 1;
-//}
-
-int main() {
-
+int day1() {
+    // Originally read from stdin in CLion, but not required.
     freopen("../day1.txt","r",stdin);
-
-    std::string test = "fj\n";
-
-//    std::cout << (test[2] == '\n') << std::endl;
-
     std::vector<int> calories;
     std::string temp;
     while  (std::getline(std::cin, temp)) {
-//        std::cout << temp[0] << std::endl;
         if (temp[0] == '\0') {
             calories.push_back('\0');
         } else {
@@ -43,10 +25,7 @@ int main() {
         }
     }
 
-    std::cout << count << std::endl;
-
     std::vector<std::vector<int>> calories_sum(count, std::vector<int> (2, 0));
-
     int j = 0;
     calories_sum[0][0] = 1;
     for (int calorie : calories) {
